@@ -1,7 +1,8 @@
+const Card = require("../src/Card");
 class Deck {
-    constructor() {
-        
-    }
+  constructor(cards) {
+    this.cards = cards;
+  }
 }
 
 
