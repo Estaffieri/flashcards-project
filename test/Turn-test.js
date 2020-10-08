@@ -27,5 +27,11 @@ it("Should return a users guess", function() {
     expect(guess1).to.equal(turn1.returnGuess());
     expect(guess1).to.equal(turn1.returnGuess());
 })
+
+it("Should let the user know they have to submit a guess", function() {
+    const turn3 = new Turn()
+    expect(turn3.returnGuess()).to.equal("Take a guess!");
+   
+})
 });
 

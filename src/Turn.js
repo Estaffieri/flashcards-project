@@ -6,7 +6,11 @@ class Turn {
         this.card = card;
     }
     returnGuess() {
-        return this.guess
+        if (this.guess === undefined) {
+            return "Take a guess!"
+        } else {
+            return this.guess
+        }
     }
 }
 
