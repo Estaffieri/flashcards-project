@@ -8,7 +8,7 @@ const Turn = require("../src/Turn");
 describe("Turn", function() {
     let card, guess1, guess2, turn1, turn2;
     beforeEach(function() {
-    card = new Card(dummyData.id, dummyData.question, dummyData.answers, dummyData.correctAnswer);
+    card = new Card( 1,"How tall is Estelle?", ["6ft", "3.5ft", "5.0ft"], "5.0ft");
     guess1 = "5.0ft"
     guess2 = "left"
     turn1 = new Turn(guess1, card);
@@ -31,7 +31,6 @@ it("Should return a users guess", function() {
 it("Should let the user know they have to submit a guess", function() {
     let turn3 = new Turn()
     expect(turn3.returnGuess()).to.equal("Take a guess!");
-   
 })
 
 it("should return a flashcard", function () {
@@ -40,7 +39,15 @@ it("should return a flashcard", function () {
   });
 
 it("should evaluate a users guess", function() {
-    expect(turn1.evaluateGuess()).to.equal(false);
+    expect(turn2.evaluateGuess()).to.equal(false);
   });
+
+it("should return feedback if the guess was incorrect", function() {
+    expect(turn2.giveFeedback()).to.equal("incorrect!")
+})
+
+it("should return feedback if the guess was correct", function() {
+    expect(turn1.giveFeedback()).to.equal("correct!")
+})
 });
 
