@@ -33,5 +33,10 @@ it("Should let the user know they have to submit a guess", function() {
     expect(turn3.returnGuess()).to.equal("Take a guess!");
    
 })
+
+it("should return a flashcard", function () {
+    expect(card).to.equal(turn1.returnCard());
+    expect(card).to.equal(turn2.returnCard());
+  });
 });
 
