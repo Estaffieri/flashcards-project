@@ -31,4 +31,7 @@ beforeEach(function() {
   it("should be an array of cards", function() {
     expect(deck1.cards).to.deep.equal([card, card2, card3]);
   })
+  it("should be able to count cards", function() {
+      expect(deck1.countCards()).to.equal(3);
+  })
 })
