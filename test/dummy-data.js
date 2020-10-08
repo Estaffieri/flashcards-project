@@ -26,5 +26,5 @@ const dummyData = [{
 }]
 
 module.exports = {
-    dummyData;
+    dummyData
 }
