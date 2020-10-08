@@ -23,6 +23,9 @@ it("should be an instance of Turn", function() {
     expect(turn1).to.be.an.instanceof(Turn);
   });
 
-
+it("Should return a users guess", function() {
+    expect(guess1).to.equal(turn1.returnGuess());
+    expect(guess1).to.equal(turn1.returnGuess());
+})
 });
 
