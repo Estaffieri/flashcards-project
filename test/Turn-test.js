@@ -9,8 +9,8 @@ describe("Turn", function() {
     let card, guess1, guess2, turn1, turn2;
     beforeEach(function() {
     card = new Card(dummyData.id, dummyData.question, dummyData.answers, dummyData.correctAnswer);
-    guess1 = "A good guess"
-    guess2 = "5.0ft"
+    guess1 = "5.0ft"
+    guess2 = "left"
     turn1 = new Turn(guess1, card);
     turn2 = new Turn(guess2, card);
     });
@@ -29,7 +29,7 @@ it("Should return a users guess", function() {
 })
 
 it("Should let the user know they have to submit a guess", function() {
-    const turn3 = new Turn()
+    let turn3 = new Turn()
     expect(turn3.returnGuess()).to.equal("Take a guess!");
    
 })
@@ -37,6 +37,10 @@ it("Should let the user know they have to submit a guess", function() {
 it("should return a flashcard", function () {
     expect(card).to.equal(turn1.returnCard());
     expect(card).to.equal(turn2.returnCard());
+  });
+
+it("should evaluate a users guess", function() {
+    expect(turn1.evaluateGuess()).to.equal(false);
   });
 });
 
