@@ -13,6 +13,7 @@ class Game {
     this.currentRound = new Round(currentDeck);
     this.printMessage(currentDeck, this.currentRound);
     this.printQuestion(this.currentRound);
+    this.startTimer();
   }
 
   printMessage(deck, round) {
@@ -20,9 +21,25 @@ class Game {
 ----------------------------------------------------------------------------`)
   }
 
+  formatDuration() {
+    return `${}`
+  }
+
+  startTimer() {
+  const startTimeInMillis = Date.now()
+  const endTimeInMillis = Date.now() - startTimeInMillis;
+  const timeElapsedInSeconds = Math.floor((endTimeInMillis - startTimeInMillis) / 1000);
+  console.log(startTimeMillis)
+  console.log(endTimeInMillis)
+  const formattedDuration = formatDuration(timeElapsedInSeconds);
+  console.log(`it took you ${formattedDuration}`);
+  }
+
   printQuestion(round) {
     util.main(round);
   }
+
+ 
 }
 
 module.exports = Game;
