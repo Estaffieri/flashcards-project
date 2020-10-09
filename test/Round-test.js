@@ -48,5 +48,13 @@ describe.only("Round", function() {
     expect(round.turns).to.equal(1);
   })
 
+  it("should add incorrect guess to the incorrectGuesses array", function() {
+    const deck = new Deck([card1, card2, card3]);
+    const round = new Round(deck);
+
+    round.takeTurn("guess");
+    expect(round.incorrectGuesses.length).to.equal(1);
+  })
+
 });
   
