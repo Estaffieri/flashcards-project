@@ -5,8 +5,13 @@ const Game = require("../src/Game");
 
 describe.only("Game", function() {
 
-it("should be a function", function() {
+  it("should be a function", function() {
     expect(Game).to.be.a("function");
-    });
-    
+  });
+
+  it("should be an instance of Game", function() {
+    const game = new Game();
+
+    expect(game).to.be.an.instanceof(Game);
+  });
 });
