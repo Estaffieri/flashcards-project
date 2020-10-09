@@ -6,7 +6,7 @@ const Turn = require("../src/Turn");
 const Deck = require("../src/Deck");
 const Round = require("../src/Round");
 
-describe.only("Deck", function() {
+describe.only("Round", function() {
     let card, card1, card2, card3, guess1, guess2, turn1, turn2, deck1;
   beforeEach(function() {
       card = new Card( 1, "How tall is Estelle?", ["6ft", "3.5ft", "5.0ft"], "5.0ft");
@@ -20,3 +20,10 @@ describe.only("Deck", function() {
       deck1 = new Deck([card, card2, card3]);
 
   });
+
+  it("should be a function", function() {
+    expect(Round).to.be.a("function");
+  });
+
+});
+  
