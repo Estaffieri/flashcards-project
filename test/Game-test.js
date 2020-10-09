@@ -3,7 +3,7 @@ const expect = chai.expect;
 
 const Game = require("../src/Game");
 
-describe.only("Game", function() {
+describe("Game", function() {
 
   it("should be a function", function() {
     expect(Game).to.be.a("function");
