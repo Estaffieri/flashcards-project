@@ -56,5 +56,16 @@ describe.only("Round", function() {
     expect(round.incorrectGuesses.length).to.equal(1);
   })
 
+  it("should return the percent of incorrectGuesses", function() {
+    const deck = new Deck([card1, card2, card3]);
+    const round = new Round(deck);
+
+    round.takeTurn("pug");
+    round.takeTurn("Chips");
+    round.takeTurn("Beatrix");
+
+  expect(round.calculatePercentCorrect()).to.equal(66);
+  });
+
 });
   
