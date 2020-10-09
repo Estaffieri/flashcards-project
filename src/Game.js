@@ -5,16 +5,18 @@ const Deck = require("../src/Deck");
 const Round = require("../src/Round");
 
 class Game {
-    constructor() {}
+  constructor() {
+      this.currentRound = {};
+  }
 
-    printMessage(deck, round) {
-        console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.)
+  printMessage(deck, round) {
+    console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.)
 ----------------------------------------------------------------------------`)
-    }
+  }
 
-    printQuestion(round) {
-        util.main(round);
-    }
+  printQuestion(round) {
+    util.main(round);
+  }
 }
 
 module.exports = Game;
